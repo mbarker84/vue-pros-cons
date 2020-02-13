@@ -1,6 +1,5 @@
 export const state = () => ({
   title: 'My app',
-  inputText: 'test',
   pros: [
     { title: 'Item 1', id: 0 },
     { title: 'Item 2', id: 1 }
@@ -10,21 +9,11 @@ export const state = () => ({
 
 export const mutations = {
   addToPros: (state, item) => {
-    state.pros = {
-      ...state.pros,
-      item
-    }
+    state.pros = [...state.pros, item]
   },
 
   addToCons: (state, item) => {
-    state.cons = {
-      ...state.cons,
-      item
-    }
-  },
-
-  clearInputText: (state) => {
-    state.inputText = ''
+    state.cons = [...state.cons, item]
   }
 }
 
